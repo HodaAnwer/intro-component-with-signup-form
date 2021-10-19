@@ -105,9 +105,14 @@
       padding-left: 5%;
       margin-left: 10%;
       margin-right: 10%;
+      /* margin: 0px;
+      padding: 0px; */
       font-family: poppins2;
       font-weight: 700;
       opacity: 0.7;
+      background-image: url("images/icon-error.svg");
+      background-repeat: no-repeat;
+      background-position: right;
     }
     
      ::placeholder {
@@ -132,9 +137,12 @@
       height: 50px;
       background-color: hsl(154, 59%, 51%);
       color: rgba(255, 255, 255, 0.8);
-      border: none;
+      border-top: 0px;
+      border-left: 0px;
+      border-right: 0px;
       font-family: poppins2;
       font-weight: 6oo;
+      border-bottom: 5px solid hsl(154, 40%, 51%);
       /* opacity: 0.7; */
     }
     
@@ -147,6 +155,7 @@
       text-align: center;
       font-family: poppins2;
       font-weight: 500;
+      box-shadow: 0px 7px rgba(0, 0, 0, 0.15);
       /* opacity: 0.7; */
     }
     
@@ -168,6 +177,24 @@
       color: hsl(248, 32%, 49%);
       padding-bottom: 20px;
     }
+    
+    .alert {
+      text-align: end;
+      color: hsl(0, 100%, 74%);
+    }
+    /* .buttonIn {
+      position: relative;
+      cursor: pointer;
+    } */
+    
+    #img {
+      display: none;
+      /* position: absolute; */
+    }
+    /* input {
+      margin: 0px;
+      padding: 0px;
+    } */
     
     .attribution {
       font-size: 11px;
@@ -192,31 +219,87 @@
         <div id="titleDiv" class="rounded-3">
           <p> Try it free 7 days <span id="titleSpan"> then $20/mo. thereafter</span></p>
         </div>
-        <div id="inputDiv" class="rounded-3">
-          <form>
+        <form id="form-id">
+          <div id="inputDiv" class="rounded-3 buttonIn">
+
+
             <div class="textDiv form-group">
-              <input type="text" required class="rounded-3 form-control" placeholder="First Name">
+              <input id="firstName" type="text" required class="rounded-3 form-control" placeholder="First Name">
             </div>
+            <div id="alertFirstName" class="alert"></div>
+
             <div class="textDiv form-group">
-              <input type="text" required class="rounded-3 form-control" placeholder="Last Name">
+              <input id="lastName" type="text" required class="rounded-3 form-control" placeholder="Last Name">
             </div>
+            <div id="alertLastName" class="alert"></div>
             <div class="textDiv form-group">
-              <input type="email" required class="rounded-3 form-control" placeholder="Email Address">
+              <input id="email" type="email" required class="rounded-3 form-control" placeholder="Email Address">
             </div>
+            <div id="alertEmail" class="alert"></div>
             <div class="textDiv form-group">
-              <input type="password" required class="rounded-3 form-control" placeholder="Password">
+              <input id="password" type="password" required class="rounded-3 form-control" placeholder="Password">
             </div>
+            <div id="alertPassword" class="alert"></div>
             <div class="textDiv form-group">
-              <button class="rounded-3"> Claim your free trial </button>
+              <button class="rounded-3" type="submit" onclick="alertFunction()"> Claim your free trial </button>
             </div>
             <div id="pDiv" class="form-group">
               <p id="pRight"> By clicking the button, you are agreeing to our <span id="pSpan"> Terms and Services</span></p>
             </div>
-          </form>
+            <!-- <img id="img" src="images/icon-error.svg" alt="icon-error"> -->
+        </form>
         </div>
       </div>
     </div>
   </div>
+  <script>
+    // $("#form-id").validate({
+    //   errorPlacement: function(error, element) {}
+    // });
+
+    // function alertFunction() {
+    //   if ($("#form-id").valid() == false) {
+    //     document.getElementById("alertFirstName").innerHTML = "First Name cannot be empty.";
+    //   }
+    // }
+    // document.getElementById("enter").style.borderColor = "hsl(0, 93%, 68%)";
+    // document.getElementById("enter").style.borderWidth = "2px";
+    // if ($("#form-id").valid() == false) {
+    //   document.getElementById("alertLastName").innerHTML = "Last Name cannot be empty.";
+    // }
+    // if ($("#form-id").valid() == false) {
+    //   document.getElementById("alertEmail").innerHTML = "Looks like this is not an email.";
+    // }
+    // if ($("#form-id").valid() == false) {
+    //   document.getElementById("alertPassword").innerHTML = "Password cannot be empty.";
+    //   }
+    //   $('#img').show();
+
+    // }
+    function alertFunction() {
+      var x = document.forms["form-id"]["firstName"].value;
+      var y = document.forms["form-id"]["lastName"].value;
+      var z = document.forms["form-id"]["email"].value;
+      var w = document.forms["form-id"]["password"].value;
+
+      if (x == "") {
+        document.getElementById("alertFirstName").innerHTML = "First Name cannot be empty.";
+        $('#img').show();
+      }
+      if (y == "") {
+        document.getElementById("alertLastName").innerHTML = "Last Name cannot be empty.";
+        $('#img').show();
+      }
+      if (z == "") {
+        document.getElementById("alertEmail").innerHTML = "Looks like this is not an email.";
+        $('#img').show();
+      }
+      if (w == "") {
+        document.getElementById("alertPassword").innerHTML = "Password cannot be empty.";
+        $('#img').show();
+      }
+    }
+  </script>
   <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">Hoda Anwer</a>.
