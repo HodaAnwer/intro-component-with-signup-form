@@ -28,23 +28,6 @@
       src: url(Poppins/Poppins-Medium.ttf);
     }
     
-    h1 {
-      font-family: poppins1;
-      font-weight: 400;
-    }
-    
-    #pLeft {
-      font-family: poppins2;
-      font-weight: 500;
-      opacity: 0.7;
-    }
-    
-    #pRight {
-      font-family: poppins2;
-      font-weight: 400;
-      opacity: 0.6;
-    }
-    
     html,
     body {
       height: 100%;
@@ -54,55 +37,39 @@
       background-image: url(images/bg-intro-desktop.png);
       background-color: hsl(0, 100%, 74%);
       /* padding-bottom: 100px; */
-      padding-right: 12%;
-      padding-left: 12%;
-      padding-top: 100px;
       /* margin: 0px; */
       max-width: 100%;
       min-height: 100%;
-      height: 100%;
-      max-height: 100%;
       /* width: 100%; 
       height: 100%;*/
     }
     
     #leftDiv {
-      width: 50%;
       color: white;
       font-family: poppins2;
       font-weight: 500;
       /* display: flex;
       justify-content: center;
       align-items: center; */
-      margin-top: 180px;
     }
-    
-    #rightDiv {
-      width: 50%;
-    }
-    
-    #inputDiv {
-      background-color: white;
-      padding-bottom: 0px;
-      padding-top: 30px;
-      /* padding-right: 12%; */
-      /* display: flex; */
-      /* justify-content: center; */
-    }
+    /* padding-right: 12%; */
+    /* display: flex; */
+    /* justify-content: center; */
     
     .textDiv {
       display: flex;
       justify-content: center;
       align-items: center;
-      padding-top: 10px;
-      padding-bottom: 10px;
+      /* padding-top: 10px; */
+      /* padding-bottom: 10px; */
     }
     
     input {
       width: 80%;
       height: 50px;
       /* border-color: hsl(246, 25%, 77%); */
-      padding-left: 5%;
+      /* padding-left: 5%; */
+      /* padding-right: 10%; */
       margin-left: 10%;
       margin-right: 10%;
       /* margin: 0px;
@@ -110,27 +77,40 @@
       font-family: poppins2;
       font-weight: 700;
       opacity: 0.7;
-      background-image: url("images/icon-error.svg");
+      /* background-image: url("images/icon-error.svg");
       background-repeat: no-repeat;
-      background-position: right;
+      background-position-x: right;
+      background-position-y: center;
+      background-image: none; */
+      position: relative;
+      /* margin: 0px; */
+      /* padding: 0px; */
     }
     
-     ::placeholder {
-      /* Chrome, Firefox, Opera, Safari 10.1+ */
-      color: hsl(246, 25%, 77%);
-      opacity: 1;
-      /* Firefox */
+    input:active {
+      border-color: hsl(248, 32%, 49%);
+      border-width: 2px;
     }
     
-     :-ms-input-placeholder {
-      /* Internet Explorer 10-11 */
-      color: hsl(246, 25%, 77%);
+    .img {
+      /* padding-right: 10px; */
+      position: absolute;
+      display: none;
     }
-    
-     ::-ms-input-placeholder {
-      /* Microsoft Edge */
-      color: hsl(246, 25%, 77%);
-    }
+    /* ::placeholder { */
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    /* color: hsl(246, 25%, 77%); */
+    /* opacity: 1; */
+    /* Firefox */
+    /* } */
+    /* :-ms-input-placeholder { */
+    /* Internet Explorer 10-11 */
+    /* color: hsl(246, 25%, 77%); */
+    /* } */
+    /* ::-ms-input-placeholder { */
+    /* Microsoft Edge */
+    /* color: hsl(246, 25%, 77%); */
+    /* } */
     
     button {
       width: 80%;
@@ -146,10 +126,13 @@
       /* opacity: 0.7; */
     }
     
+    button:active {
+      background-color: hsl(154, 90%, 51%);
+    }
+    
     #titleDiv {
       background-color: hsl(248, 32%, 49%);
       color: rgba(255, 255, 255, 0.9);
-      height: 50px;
       margin-bottom: 20px;
       padding-top: 12px;
       text-align: center;
@@ -176,25 +159,133 @@
       font-size: 0.8vw;
       color: hsl(248, 32%, 49%);
       padding-bottom: 20px;
+      box-shadow: 0px 7px rgba(0, 0, 0, 0.15);
     }
     
     .alert {
       text-align: end;
       color: hsl(0, 100%, 74%);
+      padding-top: 0px;
+      padding-bottom: 0px;
+    }
+    
+    .form-control:focus {
+      border-color: hsl(248, 32%, 49%);
+      box-shadow: none;
     }
     /* .buttonIn {
       position: relative;
       cursor: pointer;
     } */
-    
-    #img {
-      display: none;
-      /* position: absolute; */
-    }
+    /* #img {
+      display: none; */
+    /* position: absolute; */
+    /* } */
     /* input {
       margin: 0px;
       padding: 0px;
     } */
+    
+    @media only screen and (min-width:768px) {
+      .container {
+        padding-top: 100px;
+        padding-right: 12%;
+        padding-left: 12%;
+        height: 100%;
+        max-height: 100%;
+      }
+      #rightDiv {
+        width: 50%;
+        /* box-shadow: 0px 7px rgba(0, 0, 0, 0.15); */
+      }
+      #leftDiv {
+        margin-top: 150px;
+        width: 50%;
+      }
+      h1 {
+        font-family: poppins1;
+        font-weight: 400;
+        margin-bottom: 20px;
+      }
+      #pLeft {
+        font-family: poppins2;
+        font-weight: 500;
+        opacity: 0.7;
+      }
+      #titleDiv {
+        height: 50px;
+      }
+      #inputDiv {
+        background-color: white;
+        padding-bottom: 0px;
+        padding-top: 30px;
+        /* box-shadow: 0px 7px rgba(0, 0, 0, 0.15); */
+      }
+      #pRight {
+        font-family: poppins2;
+        font-weight: 400;
+        opacity: 0.6;
+      }
+    }
+    
+    @media only screen and (max-width:767px) {
+      #leftDiv {
+        width: 100%;
+        padding-top: 50px;
+      }
+      #rightDiv {
+        width: 100%;
+        margin-bottom: 50px;
+        /* box-shadow: 0px 7px rgba(0, 0, 0, 0.15); */
+      }
+      h1 {
+        font-family: poppins1;
+        font-weight: 400;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      #pLeft {
+        font-family: poppins2;
+        font-weight: 400;
+        font-size: 16px;
+        opacity: 0.7;
+        text-align: center;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 40px;
+      }
+      #titleDiv {
+        height: 75px;
+        margin-left: 5%;
+        margin-right: 5%;
+      }
+      #pTitle {
+        margin-left: 15%;
+        margin-right: 15%;
+      }
+      #inputDiv {
+        background-color: white;
+        padding-bottom: 0px;
+        padding-top: 30px;
+        margin-left: 5%;
+        margin-right: 5%;
+        /* margin-bottom: 0px; */
+      }
+      #pRight {
+        font-family: poppins2;
+        font-weight: 400;
+        opacity: 0.6;
+        font-size: 10px;
+        padding-left: 50px;
+        padding-right: 50px;
+        padding-top: 10px;
+        padding-bottom: 20px;
+      }
+      #pDiv {
+        height: 60px;
+        /* box-shadow: 0px 7px rgba(0, 0, 0, 0.15); */
+      }
+    }
     
     .attribution {
       font-size: 11px;
@@ -217,33 +308,37 @@
       </div>
       <div id="rightDiv">
         <div id="titleDiv" class="rounded-3">
-          <p> Try it free 7 days <span id="titleSpan"> then $20/mo. thereafter</span></p>
+          <p id="pTitle"> Try it free 7 days <span id="titleSpan"> then $20/mo. thereafter</span></p>
         </div>
         <form id="form-id">
-          <div id="inputDiv" class="rounded-3 buttonIn">
+          <div id="inputDiv" class="rounded-3">
 
 
             <div class="textDiv form-group">
               <input id="firstName" type="text" required class="rounded-3 form-control" placeholder="First Name">
+              <img src="images/icon-error.svg" alt="icon-error" id="img1" class="img">
             </div>
             <div id="alertFirstName" class="alert"></div>
 
             <div class="textDiv form-group">
               <input id="lastName" type="text" required class="rounded-3 form-control" placeholder="Last Name">
+              <img src="images/icon-error.svg" alt="icon-error" id="img2" class="img">
             </div>
             <div id="alertLastName" class="alert"></div>
             <div class="textDiv form-group">
               <input id="email" type="email" required class="rounded-3 form-control" placeholder="Email Address">
+              <img src="images/icon-error.svg" alt="icon-error" id="img3" class="img">
             </div>
             <div id="alertEmail" class="alert"></div>
             <div class="textDiv form-group">
               <input id="password" type="password" required class="rounded-3 form-control" placeholder="Password">
+              <img src="images/icon-error.svg" alt="icon-error" id="img4" class="img">
             </div>
             <div id="alertPassword" class="alert"></div>
             <div class="textDiv form-group">
               <button class="rounded-3" type="submit" onclick="alertFunction()"> Claim your free trial </button>
             </div>
-            <div id="pDiv" class="form-group">
+            <div id="pDiv" class="form-group rounded-3">
               <p id="pRight"> By clicking the button, you are agreeing to our <span id="pSpan"> Terms and Services</span></p>
             </div>
             <!-- <img id="img" src="images/icon-error.svg" alt="icon-error"> -->
@@ -284,19 +379,27 @@
 
       if (x == "") {
         document.getElementById("alertFirstName").innerHTML = "First Name cannot be empty.";
-        $('#img').show();
+        document.getElementById('firstName').style.borderColor = " hsl(0, 100%, 74%)";
+        document.getElementById('firstName').style.borderWidth = "2px"
+        $('#img1').show();
       }
       if (y == "") {
         document.getElementById("alertLastName").innerHTML = "Last Name cannot be empty.";
-        $('#img').show();
+        document.getElementById('lastName').style.borderColor = " hsl(0, 100%, 74%)";
+        document.getElementById('lastName').style.borderWidth = "2px"
+        $('#img2').show();
       }
       if (z == "") {
         document.getElementById("alertEmail").innerHTML = "Looks like this is not an email.";
-        $('#img').show();
+        document.getElementById('email').style.borderColor = " hsl(0, 100%, 74%)";
+        document.getElementById('email').style.borderWidth = "2px"
+        $('#img3').show();
       }
       if (w == "") {
         document.getElementById("alertPassword").innerHTML = "Password cannot be empty.";
-        $('#img').show();
+        document.getElementById('password').style.borderColor = " hsl(0, 100%, 74%)";
+        document.getElementById('password').style.borderWidth = "2px"
+        $('#img4').show();
       }
     }
   </script>
